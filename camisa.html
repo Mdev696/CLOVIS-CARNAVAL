@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda Camisa - Tolerância Zero</title>
+    <style>
+        /* Configurações Gerais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Container Principal */
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: #0d0d0d;
+            border: 2px solid #39ff14;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
+        }
+
+        /* Logos e Imagens */
+        .logo-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #39ff14;
+            box-shadow: 0 0 10px #39ff14;
+        }
+
+        .camisa-foto {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+
+        /* Títulos */
+        header h1 {
+            color: #39ff14;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #ff0000;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Caixa do Produto e Tabela */
+        .produto-box {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #9d00ff;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: #ff0000;
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .tabela-medidas {
+            margin-top: 15px;
+            font-size: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 5px;
+            text-align: center;
+        }
+
+        th {
+            color: #39ff14;
+            background: #222;
+        }
+
+        /* Formulário */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: #39ff14;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #39ff14;
+            outline: none;
+        }
+
+        /* Botão de Envio */
+        button {
+            width: 100%;
+            padding: 16px;
+            background: #39ff14;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
+        </div>
+
+        <header>
+            <h1>CAMISA OFICIAL</h1>
+            <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
+        </header>
+
+        <div class="produto-box">
+            <div class="badge">LANÇAMENTO</div>
+            <p><strong>ITEM:</strong> Camisa Basquete Camuflada</p>
+            <p><strong>MODELO:</strong> Regata 10 Anos (Anchieta-RJ)</p>
+
+            <img src="camisa.jpeg" alt="Foto da Camisa" class="camisa-foto">
+
+            <div class="tabela-medidas">
+                <h4>📏 Tabela de Medidas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tam</th>
+                            <th>Alt</th>
+                            <th>Larg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P</td>
+                            <td>72cm</td>
+                            <td>52cm</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>75cm</td>
+                            <td>54cm</td>
+                        </tr>
+                        <tr>
+                            <td>G</td>
+                            <td>78cm</td>
+                            <td>57cm</td>
+                        </tr>
+                        <tr>
+                            <td>GG</td>
+                            <td>81cm</td>
+                            <td>60cm</td>
+                        </tr>
+                        <tr>
+                            <td>XG</td>
+                            <td>84cm</td>
+                            <td>63cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <form id="camisaForm">
+            <div class="input-group">
+                <label for="nome">Nome do Comprador</label>
+                <input type="text" id="nome" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="input-group">
+                <label for="whatsapp">Seu WhatsApp</label>
+                <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+            </div>
+
+            <div class="input-group">
+                <label for="tamanho">Tamanho Desejado</label>
+                <select id="tamanho" required>
+                    <option value="" disabled selected>Selecione o tamanho</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                    <option value="XG">XG</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="pagamento">Forma de Pagamento</label>
+                <select id="pagamento" required>
+                    <option value="" disabled selected>Escolha como pagar</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão (Parcelado)">Cartão de Crédito</option>
+                    <option value="Dinheiro">Dinheiro (Na Reunião)</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="enviarPedido()">
+                RESERVAR VIA WHATSAPP
+            </button>
+        </form>
+
+        <footer>
+            <p>ANCHIETA - RIO DE JANEIRO</p>
+        </footer>
+    </div>
+
+    <script>
+        function enviarPedido() {
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const tamanho = document.getElementById('tamanho').value;
+            const pagamento = document.getElementById('pagamento').value;
+
+            if (!nome || !whatsapp || !tamanho || !pagamento) {
+                alert("⚠️ Por favor, preencha todos os campos corretamente!");
+                return;
+            }
+
+            const msg =
+                `*NOVO PEDIDO: CAMISA 10 ANOS*%0A` +
+                `----------------------------------------%0A` +
+                `👤 *Cliente:* ${nome}%0A` +
+                `👕 *Tamanho:* ${tamanho}%0A` +
+                `📱 *WhatsApp:* ${whatsapp}%0A` +
+                `💳 *Pagamento:* ${pagamento}%0A` +
+                `----------------------------------------%0A` +
+                `✅ _Pedido enviado pelo sistema oficial_`;
+
+            // COLOQUE O SEU NÚMERO COM DDD ABAIXO
+            const meuNumero = "5521999999999";
+
+            window.open(`https://wa.me/${meuNumero}?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+
+</html>

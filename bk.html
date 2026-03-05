@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Clóvis - Tolerância Zero</title>
+    <style>
+        /* Estilo Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            background-image: linear-gradient(135deg, #1a0033 0%, #000 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            border: 3px solid #39ff14;
+            border-radius: 15px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px #9d00ff;
+        }
+
+        /* Logo */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #39ff14;
+            box-shadow: 0 0 10px #39ff14;
+        }
+
+        /* Link Chamativo Camisa */
+        .link-camisa-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-camisa {
+            display: inline-block;
+            text-decoration: none;
+            background: #9d00ff;
+            color: #39ff14;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 2px solid #39ff14;
+            box-shadow: 0 0 15px #39ff14;
+            animation: pulsar 1.5s infinite;
+        }
+
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        header h1 {
+            color: #39ff14;
+            text-align: center;
+            text-shadow: 2px 2px #ff0000;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 10px;
+        }
+
+        /* Estilo do Vídeo */
+        .video-container {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #9d00ff;
+            box-shadow: 0 0 10px #39ff14;
+        }
+
+        .video-clovis {
+            width: 100%;
+            display: block;
+        }
+
+        /* Caixa de Avisos */
+        .aviso-box {
+            background: rgba(20, 0, 40, 0.7);
+            border: 1px solid #9d00ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .aviso-box h3 {
+            color: #39ff14;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .alerta {
+            color: #ffeb3b;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .lista-itens {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .proibido {
+            background: #ff0000;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Formulário */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: #39ff14;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #9d00ff;
+            background: #111;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            text-shadow: 1px 1px #000;
+        }
+
+        button:hover {
+            background: #39ff14;
+            color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #39ff14;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
+        </div>
+
+        <div class="link-camisa-container">
+            <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
+        </div>
+
+        <header>
+            <h1>REUNIÃO DA TURMA</h1>
+            <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
+        </header>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="video-clovis">
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+
+        <div class="aviso-box">
+            <h3>⚠️ INFORMAÇÕES IMPORTANTES</h3>
+            <p><strong>VALOR TOTAL:</strong> R$ 1700,00</p>
+            <p><strong>PARCELAS:</strong> 10x de R$ 170,00 (Mensal obrigatório).</p>
+            <p class="alerta">Quitação até 31/Dez. Após virada do ano, acréscimo de 10% (R$ 1.870,00).</p>
+
+            <ul class="lista-itens">
+                <li>✅ Fantasia Completa + Saída</li>
+                <li>✅ Equipe + Fogos</li>
+                <li>✅ 3 Dias de Ônibus + Kit Carnaval</li>
+                <li>✅ Ressaca + Churrasco Reuniões</li>
+                <li>✅ Tênis (Até R$ 800,00)</li>
+            </ul>
+
+            <div class="proibido">
+                ❌ <strong>ATENÇÃO:</strong> Bebidas apenas no Bar da Turma.
+            </div>
+        </div>
+
+        <form id="clovisForm">
+            <div class="input-group">
+                <label>Nome Completo</label>
+                <input type="text" id="nome" required>
+            </div>
+
+            <div class="input-group">
+                <label>Data de Nascimento</label>
+                <input type="date" id="nascimento" required>
+            </div>
+
+            <div class="input-group">
+                <label>WhatsApp</label>
+                <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+            </div>
+
+            <div class="input-group">
+                <label>Parcelamento</label>
+                <select id="parcelas" required>
+                    <option value="" disabled selected>Escolha as parcelas</option>
+                    <option value="1x">1x de R$ 1700</option>
+                    <option value="5x">5x de R$ 340</option>
+                    <option value="10x">10x de R$ 170</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="enviarWhatsApp()">
+                ACEITAR TERMOS E RESERVAR
+            </button>
+        </form>
+
+        <footer>
+            <p>TOLERÂNCIA ZERO - ANCHIETA RJ</p>
+        </footer>
+    </div>
+
+    <script>
+        function enviarWhatsApp() {
+            const nome = document.getElementById('nome').value;
+            const nascimento = document.getElementById('nascimento').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const parcelas = document.getElementById('parcelas').value;
+
+            if (!nome || !nascimento || !whatsapp || !parcelas) {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+            const mensagem =
+                `*RESERVA CLÓVIS - TOLERÂNCIA ZERO*%0A` +
+                `👤 *Nome:* ${nome}%0A` +
+                `🎂 *Nascimento:* ${nascimento}%0A` +
+                `📱 *WhatsApp:* ${whatsapp}%0A` +
+                `💳 *Parcelas:* ${parcelas}%0A` +
+                `----------------------------%0A` +
+                `⚠️ *Ciente das regras de quitação e bebidas.*`;
+
+            const numeroDestino = "5521999999999"; // Substitua pelo seu número
+            window.open(`https://wa.me/${numeroDestino}?text=${mensagem}`, '_blank');
+        }
+    </script>
+</body>
+
+</html>
