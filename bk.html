@@ -33,7 +33,6 @@
             box-shadow: 0 0 20px #9d00ff;
         }
 
-        /* Logo */
         .logo-container {
             text-align: center;
             margin-bottom: 20px;
@@ -50,7 +49,6 @@
             box-shadow: 0 0 10px #39ff14;
         }
 
-        /* Link Chamativo Camisa */
         .link-camisa-container {
             text-align: center;
             margin-bottom: 20px;
@@ -101,7 +99,6 @@
             padding-bottom: 10px;
         }
 
-        /* Estilo do Vídeo */
         .video-container {
             width: 100%;
             margin-bottom: 20px;
@@ -116,7 +113,6 @@
             display: block;
         }
 
-        /* Caixa de Avisos */
         .aviso-box {
             background: rgba(20, 0, 40, 0.7);
             border: 1px solid #9d00ff;
@@ -152,7 +148,6 @@
             text-align: center;
         }
 
-        /* Formulário */
         .input-group {
             margin-bottom: 15px;
         }
@@ -186,7 +181,6 @@
             font-size: 1.1rem;
             cursor: pointer;
             margin-top: 10px;
-            text-shadow: 1px 1px #000;
         }
 
         button:hover {
@@ -200,20 +194,27 @@
             color: #39ff14;
             font-size: 0.7rem;
         }
+
+        /* Estilo do QR Code */
+        #areaQRCode {
+            display: none;
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #fff;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
-
     <div class="container">
         <div class="logo-container">
             <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
         </div>
-
         <div class="link-camisa-container">
             <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
         </div>
-
         <header>
             <h1>REUNIÃO DA TURMA</h1>
             <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
@@ -222,27 +223,13 @@
         <div class="video-container">
             <video autoplay muted loop playsinline class="video-clovis">
                 <source src="video.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
             </video>
         </div>
 
         <div class="aviso-box">
             <h3>⚠️ INFORMAÇÕES IMPORTANTES</h3>
             <p><strong>VALOR TOTAL:</strong> R$ 1700,00</p>
-            <p><strong>PARCELAS:</strong> 10x de R$ 170,00 (Mensal obrigatório).</p>
-            <p class="alerta">Quitação até 31/Dez. Após virada do ano, acréscimo de 10% (R$ 1.870,00).</p>
-
-            <ul class="lista-itens">
-                <li>✅ Fantasia Completa + Saída</li>
-                <li>✅ Equipe + Fogos</li>
-                <li>✅ 3 Dias de Ônibus + Kit Carnaval</li>
-                <li>✅ Ressaca + Churrasco Reuniões</li>
-                <li>✅ Tênis (Até R$ 800,00)</li>
-            </ul>
-
-            <div class="proibido">
-                ❌ <strong>ATENÇÃO:</strong> Bebidas apenas no Bar da Turma.
-            </div>
+            <p class="alerta">Quitação até 31/Dez. Após virada do ano, acréscimo de 10%.</p>
         </div>
 
         <form id="clovisForm">
@@ -250,12 +237,10 @@
                 <label>Nome Completo</label>
                 <input type="text" id="nome" required>
             </div>
-
             <div class="input-group">
                 <label>Data de Nascimento</label>
                 <input type="date" id="nascimento" required>
             </div>
-
             <div class="input-group">
                 <label>WhatsApp</label>
                 <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
@@ -263,17 +248,28 @@
 
             <div class="input-group">
                 <label>Plano de Pagamento</label>
-                <select id="parcelas" required>
-                    <option value="" disabled selected>Escolha o parcelamento</option>
-                    <option value="10x de R$ 170,00">10x de R$ 170,00 (Padrão)</option>
-                    <option value="5x de R$ 340,00">5x de R$ 340,00</option>
-                    <option value="À Vista - R$ 1700,00">À Vista - R$ 1700,00</option>
+                <select id="parcelas" onchange="mostrarQRCode()">
+                    <option value="" disabled selected>Escolha a parcela ou valor</option>
+                    <option value="170">1ª Parcela (R$ 170,00)</option>
+                    <option value="170">2ª Parcela (R$ 170,00)</option>
+                    <option value="170">3ª Parcela (R$ 170,00)</option>
+                    <option value="170">4ª Parcela (R$ 170,00)</option>
+                    <option value="170">5ª Parcela (R$ 170,00)</option>
+                    <option value="170">6ª Parcela (R$ 170,00)</option>
+                    <option value="170">7ª Parcela (R$ 170,00)</option>
+                    <option value="170">8ª Parcela (R$ 170,00)</option>
+                    <option value="170">9ª Parcela (R$ 170,00)</option>
+                    <option value="170">10ª Parcela (R$ 170,00)</option>
+                    <option value="livre">Outros Valores (Valor Livre)</option>
                 </select>
             </div>
 
-            <button type="button" onclick="enviarWhatsApp()">
-                ACEITAR TERMOS E RESERVAR
-            </button>
+            <div id="areaQRCode">
+                <img id="imgQR" src="" alt="QR Code" style="width: 150px;">
+                <p id="msgQR" style="color: black; font-size: 0.7rem; margin-top: 5px;"></p>
+            </div>
+
+            <button type="button" onclick="enviarWhatsApp()">ACEITAR TERMOS E RESERVAR</button>
         </form>
 
         <footer>
@@ -282,28 +278,31 @@
     </div>
 
     <script>
+        function mostrarQRCode() {
+            const select = document.getElementById('parcelas');
+            const area = document.getElementById('areaQRCode');
+            const img = document.getElementById('imgQR');
+            const msg = document.getElementById('msgQR');
+
+            if (!select.value) { area.style.display = 'none'; return; }
+            area.style.display = 'block';
+
+            if (select.value === '170') {
+                img.src = 'pix_pago.png'; // Substitua pelo arquivo do QR de 170
+                msg.innerText = 'QR Code: R$ 170,00';
+            } else {
+                img.src = 'outrovalor.png'; // Substitua pelo arquivo do QR sem valor
+                msg.innerText = 'QR Code: Valor definido no App';
+            }
+        }
+
         function enviarWhatsApp() {
             const nome = document.getElementById('nome').value;
-            const nascimento = document.getElementById('nascimento').value;
-            const whatsapp = document.getElementById('whatsapp').value;
             const parcelas = document.getElementById('parcelas').value;
+            if (!nome || !parcelas) { alert("Preencha todos os campos!"); return; }
 
-            if (!nome || !nascimento || !whatsapp || !parcelas) {
-                alert("Preencha todos os campos!");
-                return;
-            }
-
-            const mensagem =
-                `*RESERVA CLÓVIS - TOLERÂNCIA ZERO*%0A` +
-                `👤 *Nome:* ${nome}%0A` +
-                `🎂 *Nascimento:* ${nascimento}%0A` +
-                `📱 *WhatsApp:* ${whatsapp}%0A` +
-                `💳 *Plano:* ${parcelas}%0A` +
-                `----------------------------%0A` +
-                `⚠️ *Ciente das regras de quitação e bebidas.*`;
-
-            const numeroDestino = "+5521992003436"; // Substitua pelo seu número
-            window.open(`https://wa.me/${numeroDestino}?text=${mensagem}`, '_blank');
+            const mensagem = `RESERVA: ${nome}%0APlano: ${parcelas === 'livre' ? 'Outros Valores' : 'Parcela de R$ 170,00'}`;
+            window.open(`https://wa.me/+5521992003436?text=${mensagem}`, '_blank');
         }
     </script>
 </body>
