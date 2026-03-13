@@ -33,6 +33,16 @@
             box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
         }
 
+        /* Link de Volta */
+        .link-voltar {
+            display: block;
+            text-align: left;
+            margin-bottom: 15px;
+            color: #39ff14;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
         /* Logos e Imagens */
         .logo-container {
             text-align: center;
@@ -91,6 +101,12 @@
             margin-bottom: 5px;
         }
 
+        .valor-venda {
+            color: #39ff14;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
         .tabela-medidas {
             margin-top: 15px;
             font-size: 0.75rem;
@@ -142,6 +158,19 @@
             outline: none;
         }
 
+        /* Campo Pix Dinâmico */
+        #pix-info {
+            display: none;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px dashed #39ff14;
+            color: #39ff14;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
         /* Botão de Envio */
         button {
             width: 100%;
@@ -172,6 +201,8 @@
 <body>
 
     <div class="container">
+        <a href="index.html" class="link-voltar">← Adquira seu Clovis</a>
+
         <div class="logo-container">
             <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
         </div>
@@ -185,6 +216,7 @@
             <div class="badge">LANÇAMENTO</div>
             <p><strong>ITEM:</strong> Camisa Basquete Camuflada</p>
             <p><strong>MODELO:</strong> Regata 10 Anos (Anchieta-RJ)</p>
+            <p class="valor-venda"><strong>VALOR:</strong> Adulto R$ 70 | Criança R$ 50</p>
 
             <img src="camisa.jpeg" alt="Foto da Camisa" class="camisa-foto">
 
@@ -254,12 +286,16 @@
 
             <div class="input-group">
                 <label for="pagamento">Forma de Pagamento</label>
-                <select id="pagamento" required>
+                <select id="pagamento" required onchange="togglePix()">
                     <option value="" disabled selected>Escolha como pagar</option>
                     <option value="Pix">Pix</option>
                     <option value="Cartão (Parcelado)">Cartão de Crédito</option>
                     <option value="Dinheiro">Dinheiro (Na Reunião)</option>
                 </select>
+            </div>
+
+            <div id="pix-info">
+                Chave PIX: <strong>21 99200-3436</strong>
             </div>
 
             <button type="button" onclick="enviarPedido()">
@@ -273,6 +309,17 @@
     </div>
 
     <script>
+        // Função para mostrar/esconder o Pix
+        function togglePix() {
+            const pagamento = document.getElementById('pagamento').value;
+            const pixInfo = document.getElementById('pix-info');
+            if (pagamento === 'Pix') {
+                pixInfo.style.display = 'block';
+            } else {
+                pixInfo.style.display = 'none';
+            }
+        }
+
         function enviarPedido() {
             const nome = document.getElementById('nome').value;
             const whatsapp = document.getElementById('whatsapp').value;
@@ -294,9 +341,7 @@
                 `----------------------------------------%0A` +
                 `✅ _Pedido enviado pelo sistema oficial_`;
 
-            // COLOQUE O SEU NÚMERO COM DDD ABAIXO
             const meuNumero = "+5521992003436";
-
             window.open(`https://wa.me/${meuNumero}?text=${msg}`, '_blank');
         }
     </script>

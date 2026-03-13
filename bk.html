@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva Clóvis - Tolerância Zero</title>
+    <title>Venda Camisa - Tolerância Zero</title>
     <style>
-        /* Estilo Base */
+        /* Configurações Gerais */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,138 +16,121 @@
 
         body {
             background-color: #000;
-            background-image: linear-gradient(135deg, #1a0033 0%, #000 100%);
-            color: white;
+            color: #fff;
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
         }
 
+        /* Container Principal */
         .container {
             width: 100%;
-            max-width: 400px;
-            border: 3px solid #39ff14;
-            border-radius: 15px;
+            max-width: 420px;
+            background: #0d0d0d;
+            border: 2px solid #39ff14;
+            border-radius: 20px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 20px #9d00ff;
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
         }
 
+        /* Link de Volta */
+        .link-voltar {
+            display: block;
+            text-align: left;
+            margin-bottom: 15px;
+            color: #39ff14;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        /* Logos e Imagens */
         .logo-container {
             text-align: center;
-            margin-bottom: 20px;
             display: flex;
             justify-content: center;
+            margin-bottom: 10px;
         }
 
         .logo {
-            max-width: 150px;
-            width: 100%;
+            max-width: 120px;
             height: auto;
             border-radius: 50%;
             border: 3px solid #39ff14;
             box-shadow: 0 0 10px #39ff14;
         }
 
-        .link-camisa-container {
-            text-align: center;
-            margin-bottom: 20px;
+        .camisa-foto {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+            border: 1px solid #444;
         }
 
-        .btn-camisa {
-            display: inline-block;
-            text-decoration: none;
-            background: #9d00ff;
-            color: #39ff14;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border: 2px solid #39ff14;
-            box-shadow: 0 0 15px #39ff14;
-            animation: pulsar 1.5s infinite;
-        }
-
-        @keyframes pulsar {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
+        /* Títulos */
         header h1 {
             color: #39ff14;
             text-align: center;
-            text-shadow: 2px 2px #ff0000;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            font-size: 1.5rem;
         }
 
         .subtitle {
             text-align: center;
-            color: #fff;
+            color: #ff0000;
             font-size: 0.9rem;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #ff0000;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .video-container {
-            width: 100%;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #9d00ff;
-            box-shadow: 0 0 10px #39ff14;
-        }
-
-        .video-clovis {
-            width: 100%;
-            display: block;
-        }
-
-        .aviso-box {
-            background: rgba(20, 0, 40, 0.7);
-            border: 1px solid #9d00ff;
+        /* Caixa do Produto e Tabela */
+        .produto-box {
+            background: #1a1a1a;
             padding: 15px;
             border-radius: 10px;
+            border-left: 5px solid #9d00ff;
             margin-bottom: 20px;
-            font-size: 0.85rem;
         }
 
-        .aviso-box h3 {
-            color: #39ff14;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .alerta {
-            color: #ffeb3b;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .lista-itens {
-            list-style: none;
-            margin: 10px 0;
-        }
-
-        .proibido {
+        .badge {
             background: #ff0000;
-            color: white;
-            padding: 8px;
-            border-radius: 5px;
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .valor-venda {
+            color: #39ff14;
             margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .tabela-medidas {
+            margin-top: 15px;
+            font-size: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 5px;
             text-align: center;
         }
 
+        th {
+            color: #39ff14;
+            background: #222;
+        }
+
+        /* Formulário */
         .input-group {
             margin-bottom: 15px;
         }
@@ -155,154 +138,211 @@
         label {
             display: block;
             color: #39ff14;
+            font-size: 11px;
             margin-bottom: 5px;
-            font-size: 0.8rem;
         }
 
         input,
         select {
             width: 100%;
             padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #9d00ff;
             background: #111;
-            color: white;
-            font-size: 1rem;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
         }
 
+        input:focus,
+        select:focus {
+            border-color: #39ff14;
+            outline: none;
+        }
+
+        /* Campo Pix Dinâmico */
+        #pix-info {
+            display: none;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px dashed #39ff14;
+            color: #39ff14;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* Botão de Envio */
         button {
             width: 100%;
-            padding: 15px;
-            background: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
+            padding: 16px;
             background: #39ff14;
             color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button:active {
+            transform: scale(0.96);
         }
 
         footer {
+            text-align: center;
             margin-top: 20px;
-            text-align: center;
-            color: #39ff14;
-            font-size: 0.7rem;
-        }
-
-        /* Estilo do QR Code */
-        #areaQRCode {
-            display: none;
-            text-align: center;
-            margin: 15px 0;
-            padding: 10px;
-            background: #fff;
-            border-radius: 10px;
+            font-size: 10px;
+            color: #555;
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
+        <a href="index.html" class="link-voltar">← Adquira seu Clovis</a>
+
         <div class="logo-container">
             <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
         </div>
-        <div class="link-camisa-container">
-            <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
-        </div>
+
         <header>
-            <h1>REUNIÃO DA TURMA</h1>
+            <h1>CAMISA OFICIAL</h1>
             <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
         </header>
 
-        <div class="video-container">
-            <video autoplay muted loop playsinline class="video-clovis">
-                <source src="video.mp4" type="video/mp4">
-            </video>
+        <div class="produto-box">
+            <div class="badge">LANÇAMENTO</div>
+            <p><strong>ITEM:</strong> Camisa Basquete Camuflada</p>
+            <p><strong>MODELO:</strong> Regata 10 Anos (Anchieta-RJ)</p>
+            <p class="valor-venda"><strong>VALOR:</strong> Adulto R$ 70 | Criança R$ 50</p>
+
+            <img src="camisa.jpeg" alt="Foto da Camisa" class="camisa-foto">
+
+            <div class="tabela-medidas">
+                <h4>📏 Tabela de Medidas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tam</th>
+                            <th>Alt</th>
+                            <th>Larg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P</td>
+                            <td>72cm</td>
+                            <td>52cm</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>75cm</td>
+                            <td>54cm</td>
+                        </tr>
+                        <tr>
+                            <td>G</td>
+                            <td>78cm</td>
+                            <td>57cm</td>
+                        </tr>
+                        <tr>
+                            <td>GG</td>
+                            <td>81cm</td>
+                            <td>60cm</td>
+                        </tr>
+                        <tr>
+                            <td>XG</td>
+                            <td>84cm</td>
+                            <td>63cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="aviso-box">
-            <h3>⚠️ INFORMAÇÕES IMPORTANTES</h3>
-            <p><strong>VALOR TOTAL:</strong> R$ 1700,00</p>
-            <p class="alerta">Quitação até 31/Dez. Após virada do ano, acréscimo de 10%.</p>
-        </div>
+        <form id="camisaForm">
+            <div class="input-group">
+                <label for="nome">Nome do Comprador</label>
+                <input type="text" id="nome" placeholder="Seu nome completo" required>
+            </div>
 
-        <form id="clovisForm">
             <div class="input-group">
-                <label>Nome Completo</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="input-group">
-                <label>Data de Nascimento</label>
-                <input type="date" id="nascimento" required>
-            </div>
-            <div class="input-group">
-                <label>WhatsApp</label>
+                <label for="whatsapp">Seu WhatsApp</label>
                 <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
             </div>
 
             <div class="input-group">
-                <label>Plano de Pagamento</label>
-                <select id="parcelas" onchange="mostrarQRCode()">
-                    <option value="" disabled selected>Escolha a parcela ou valor</option>
-                    <option value="170">1ª Parcela (R$ 170,00)</option>
-                    <option value="170">2ª Parcela (R$ 170,00)</option>
-                    <option value="170">3ª Parcela (R$ 170,00)</option>
-                    <option value="170">4ª Parcela (R$ 170,00)</option>
-                    <option value="170">5ª Parcela (R$ 170,00)</option>
-                    <option value="170">6ª Parcela (R$ 170,00)</option>
-                    <option value="170">7ª Parcela (R$ 170,00)</option>
-                    <option value="170">8ª Parcela (R$ 170,00)</option>
-                    <option value="170">9ª Parcela (R$ 170,00)</option>
-                    <option value="170">10ª Parcela (R$ 170,00)</option>
-                    <option value="livre">Outros Valores (Valor Livre)</option>
+                <label for="tamanho">Tamanho Desejado</label>
+                <select id="tamanho" required>
+                    <option value="" disabled selected>Selecione o tamanho</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                    <option value="XG">XG</option>
                 </select>
             </div>
 
-            <div id="areaQRCode">
-                <img id="imgQR" src="" alt="QR Code" style="width: 150px;">
-                <p id="msgQR" style="color: black; font-size: 0.7rem; margin-top: 5px;"></p>
+            <div class="input-group">
+                <label for="pagamento">Forma de Pagamento</label>
+                <select id="pagamento" required onchange="togglePix()">
+                    <option value="" disabled selected>Escolha como pagar</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão (Parcelado)">Cartão de Crédito</option>
+                    <option value="Dinheiro">Dinheiro (Na Reunião)</option>
+                </select>
             </div>
 
-            <button type="button" onclick="enviarWhatsApp()">ACEITAR TERMOS E RESERVAR</button>
+            <div id="pix-info">
+                Chave PIX: <strong>21 99200-3436</strong>
+            </div>
+
+            <button type="button" onclick="enviarPedido()">
+                RESERVAR VIA WHATSAPP
+            </button>
         </form>
 
         <footer>
-            <p>TOLERÂNCIA ZERO - ANCHIETA RJ</p>
+            <p>ANCHIETA - RIO DE JANEIRO</p>
         </footer>
     </div>
 
     <script>
-        function mostrarQRCode() {
-            const select = document.getElementById('parcelas');
-            const area = document.getElementById('areaQRCode');
-            const img = document.getElementById('imgQR');
-            const msg = document.getElementById('msgQR');
-
-            if (!select.value) { area.style.display = 'none'; return; }
-            area.style.display = 'block';
-
-            if (select.value === '170') {
-                img.src = 'pix_pago.png'; // Substitua pelo arquivo do QR de 170
-                msg.innerText = 'QR Code: R$ 170,00';
+        // Função para mostrar/esconder o Pix
+        function togglePix() {
+            const pagamento = document.getElementById('pagamento').value;
+            const pixInfo = document.getElementById('pix-info');
+            if (pagamento === 'Pix') {
+                pixInfo.style.display = 'block';
             } else {
-                img.src = 'outrovalor.png'; // Substitua pelo arquivo do QR sem valor
-                msg.innerText = 'QR Code: Valor definido no App';
+                pixInfo.style.display = 'none';
             }
         }
 
-        function enviarWhatsApp() {
+        function enviarPedido() {
             const nome = document.getElementById('nome').value;
-            const parcelas = document.getElementById('parcelas').value;
-            if (!nome || !parcelas) { alert("Preencha todos os campos!"); return; }
+            const whatsapp = document.getElementById('whatsapp').value;
+            const tamanho = document.getElementById('tamanho').value;
+            const pagamento = document.getElementById('pagamento').value;
 
-            const mensagem = `RESERVA: ${nome}%0APlano: ${parcelas === 'livre' ? 'Outros Valores' : 'Parcela de R$ 170,00'}`;
-            window.open(`https://wa.me/+5521992003436?text=${mensagem}`, '_blank');
+            if (!nome || !whatsapp || !tamanho || !pagamento) {
+                alert("⚠️ Por favor, preencha todos os campos corretamente!");
+                return;
+            }
+
+            const msg =
+                `*NOVO PEDIDO: CAMISA 10 ANOS*%0A` +
+                `----------------------------------------%0A` +
+                `👤 *Cliente:* ${nome}%0A` +
+                `👕 *Tamanho:* ${tamanho}%0A` +
+                `📱 *WhatsApp:* ${whatsapp}%0A` +
+                `💳 *Pagamento:* ${pagamento}%0A` +
+                `----------------------------------------%0A` +
+                `✅ _Pedido enviado pelo sistema oficial_`;
+
+            const meuNumero = "+5521992003436";
+            window.open(`https://wa.me/${meuNumero}?text=${msg}`, '_blank');
         }
     </script>
 </body>
