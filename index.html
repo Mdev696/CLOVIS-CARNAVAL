@@ -6,19 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva Clóvis - Tolerância Zero</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="logo.jpeg" alt="Logo Tolerância Zero" class="logo">
-        </div>
-        <div class="link-camisa-container">
-            <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
-        </div>
+        <div class="logo-container"><img src="logo.jpeg" alt="Logo" class="logo"></div>
+        <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
+
         <header>
-            <h1>REUNIÃO DA TURMA</h1>
             <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
         </header>
 
@@ -30,53 +25,25 @@
 
         <div class="aviso-box">
             <h3>⚠️ INFORMAÇÕES IMPORTANTES</h3>
-            <p><strong>VALOR TOTAL:</strong> R$ 1700,00</p>
-            <p class="alerta">TOLERÂNCIA ZERO
-                1️⃣0️⃣ ANOS
-
-                VALOR TOTAL 1700 REAIS
-
-                10 PARCELAS DE 170 REAIS . OBRIGATÓRIO SER PAGO MENSALMENTE.
-                FANTASIA TEM QUE SER QUITADA ATÉ O ÚLTIMO DIA DE DEZEMBRO. VIROU O ANO , O VALOR TOTAL SOBE 10% .. OU
-                SEJA MAIS 170 REAIS
-
-                ●FANTASIA COMPLETA
-                ●SAÍDA
-                ●Equipe
-                ●Fogos
-                ●3 DIAS DE ÔNIBUS
-                ●KIT CARNAVAL
-                ●RESSACA QUARTA DE CINZAS .
-                ●CHURRASCO NAS REUNIÕES
-                ●TÊNIS ATÉ O VALOR DE 800 REAIS .
-                <br>
-                <br>
-                <br>
-                
-
-                ❌ATENÇÃO ❌
-                <br>
-                FESTAS E SAÍDA DA TURMA NÃO PODERÁ LEVAR BEBIDA, A BEBIDA SERÁ VENDIDA NO BAR DA TURMA .</p>
+            <center><strong>TOLERÂNCIA ZERO</strong> 1️⃣0️⃣ <strong>ANOS</strong></center><br>
+            <span class="destaque-amarelo">VALOR TOTAL 1700 REAIS</span><br>
+            10 PARCELAS DE 170 REAIS. OBRIGATÓRIO SER PAGO MENSALMENTE.<br>
+            FANTASIA QUITADA ATÉ DEZEMBRO. VIROU O ANO, SOBE 10% (MAIS 170 REAIS).<br>
+            ● FANTASIA COMPLETA ● SAÍDA ● EQUIPE ● FOGOS ● 3 DIAS ÔNIBUS ● KIT CARNAVAL ● RESSACA ● CHURRASCO<br>
+            ● TÊNIS ATÉ 800 REAIS.<br>
+            <div class="proibido-box">❌ ATENÇÃO: NÃO LEVAR BEBIDA, VENDA NO BAR DA TURMA.</div>
         </div>
 
         <form id="clovisForm">
-            <div class="input-group">
-                <label>Nome Completo</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="input-group">
-                <label>Data de Nascimento</label>
-                <input type="date" id="nascimento" required>
-            </div>
-            <div class="input-group">
-                <label>WhatsApp</label>
-                <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
-            </div>
-
-            <div class="input-group">
-                <label>Plano de Pagamento</label>
+            <div class="input-group"><label>Nome Completo</label><input type="text" id="nome" required></div>
+            <div class="input-group"><label>Data de Nascimento</label><input type="date" id="nascimento" required></div>
+            <div class="input-group"><label>CPF</label><input type="text" id="cpf" placeholder="000.000.000-00"
+                    required></div>
+            <div class="input-group"><label>WhatsApp</label><input type="tel" id="whatsapp"
+                    placeholder="(00) 00000-0000" required></div>
+            <div class="input-group"><label>Plano de Pagamento</label>
                 <select id="parcelas" onchange="mostrarQRCode()">
-                    <option value="" disabled selected>Escolha a parcela ou valor</option>
+                    <option value="" disabled selected>Escolha a parcela</option>
                     <option value="170">1ª Parcela (R$ 170,00)</option>
                     <option value="170">2ª Parcela (R$ 170,00)</option>
                     <option value="170">3ª Parcela (R$ 170,00)</option>
@@ -87,21 +54,27 @@
                     <option value="170">8ª Parcela (R$ 170,00)</option>
                     <option value="170">9ª Parcela (R$ 170,00)</option>
                     <option value="170">10ª Parcela (R$ 170,00)</option>
-                    <option value="livre">Outros Valores (Valor Livre)</option>
+                    <option value="livre">Outros Valores (Livre)</option>
                 </select>
             </div>
 
             <div id="areaQRCode">
-                <img id="imgQR" src="" alt="QR Code" style="width: 150px;">
-                <p id="msgQR" style="color: black; font-size: 0.7rem; margin-top: 5px;"></p>
+                <img id="imgQR" src="" alt="QR Code" style="width: 180px;">
+                <p id="msgQR" style="color: black; font-size: 0.8rem; font-weight: bold;"></p>
+                <div id="textoCascata" class="codigo-cascata"></div>
+                <button type="button" class="btn-copiar-pix" onclick="copiarTexto()">Copie o código acima e cole no
+                    banco</button>
             </div>
-
             <button type="button" onclick="enviarWhatsApp()">ACEITAR TERMOS E RESERVAR</button>
         </form>
 
-        <footer>
-            <p>TOLERÂNCIA ZERO - ANCHIETA RJ</p>
-        </footer>
+        <br>
+        <header>
+            <h1>REUNIÃO DA TURMA</h1>
+            <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
+        </header>
+
+        <img src="reuniao.jpg" alt="Banner Reunião" class="banner-imagem">
     </div>
 
     <script>
@@ -110,25 +83,37 @@
             const area = document.getElementById('areaQRCode');
             const img = document.getElementById('imgQR');
             const msg = document.getElementById('msgQR');
-
+            const cascata = document.getElementById('textoCascata');
+            const pix170 = "00020126710014BR.GOV.BCB.PIX0111132338707280234MENSALIDADE TURMA TOLERANCIA ZERO 5204000053039865406170.005802BR5925HUMBERTO HENRIQUE DE ANDR6009SAO PAULO622605222epjkLpFrlE5zdZEsHpkn463043FAF";
+            const pixLivre = "00020126590014BR.GOV.BCB.PIX0111132338707280222TURMA TOLERANCIA ZERO 5204000053039865802BR5925HUMBERTO HENRIQUE DE ANDR6009SAO PAULO622605225WjYVZNuCOcJmSYCs6ZqpX6304F72A";
             if (!select.value) { area.style.display = 'none'; return; }
             area.style.display = 'block';
-
             if (select.value === '170') {
-                img.src = 'pix_pago.png'; // Substitua pelo arquivo do QR de 170
-                msg.innerText = 'QR Code: R$ 170,00';
+                img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(pix170)}`;
+                msg.innerText = 'PIX MENSALIDADE: R$ 170,00'; cascata.innerText = pix170;
             } else {
-                img.src = 'outrovalor.png'; // Substitua pelo arquivo do QR sem valor
-                msg.innerText = 'QR Code: Valor definido no App';
+                img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(pixLivre)}`;
+                msg.innerText = 'PIX VALOR LIVRE'; cascata.innerText = pixLivre;
             }
         }
-
+        function copiarTexto() {
+            const texto = document.getElementById('textoCascata').innerText;
+            navigator.clipboard.writeText(texto).then(() => alert("Copiado!"));
+        }
         function enviarWhatsApp() {
             const nome = document.getElementById('nome').value;
-            const parcelas = document.getElementById('parcelas').value;
-            if (!nome || !parcelas) { alert("Preencha todos os campos!"); return; }
+            const nascimento = document.getElementById('nascimento').value;
+            const cpf = document.getElementById('cpf').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const select = document.getElementById('parcelas');
 
-            const mensagem = `RESERVA: ${nome}%0APlano: ${parcelas === 'livre' ? 'Outros Valores' : 'Parcela de R$ 170,00'}`;
+            if (!nome || !nascimento || !cpf || !whatsapp || !select.value) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            const plano = select.options[select.selectedIndex].text;
+            const mensagem = `RESERVA TOLERÂNCIA ZERO%0A%0ANome: ${nome}%0ANascimento: ${nascimento}%0ACPF: ${cpf}%0AWhatsApp: ${whatsapp}%0APlano: ${plano}`;
             window.open(`https://wa.me/+5521992003436?text=${mensagem}`, '_blank');
         }
     </script>
