@@ -49,7 +49,6 @@
             box-shadow: 0 0 10px #39ff14;
         }
 
-        /* Estilo Vídeo e Imagem */
         .video-container {
             width: 100%;
             margin-bottom: 20px;
@@ -208,8 +207,6 @@
 
 <body>
     <div class="container">
-
-
         <div class="logo-container"><img src="logo.jpeg" alt="Logo" class="logo"></div>
         <a href="camisa.html" class="btn-camisa">👕 ADQUIRA A SUA CAMISA</a>
 
@@ -217,14 +214,11 @@
             <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
         </header>
 
-
         <div class="video-container">
             <video autoplay muted loop playsinline class="video-clovis">
                 <source src="video.mp4" type="video/mp4">
             </video>
         </div>
-
-
 
         <div class="aviso-box">
             <h3>⚠️ INFORMAÇÕES IMPORTANTES</h3>
@@ -272,7 +266,6 @@
         </form>
 
         <br>
-
         <header>
             <h1>REUNIÃO DA TURMA</h1>
             <p class="subtitle">TOLERÂNCIA ZERO - 10 ANOS</p>
@@ -306,9 +299,18 @@
         }
         function enviarWhatsApp() {
             const nome = document.getElementById('nome').value;
+            const nascimento = document.getElementById('nascimento').value;
             const cpf = document.getElementById('cpf').value;
-            if (!nome || !cpf) { alert("Preencha tudo!"); return; }
-            const mensagem = `RESERVA TOLERÂNCIA ZERO%0A%0ANome: ${nome}%0ACPF: ${cpf}`;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const select = document.getElementById('parcelas');
+
+            if (!nome || !nascimento || !cpf || !whatsapp || !select.value) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            const plano = select.options[select.selectedIndex].text;
+            const mensagem = `RESERVA TOLERÂNCIA ZERO%0A%0ANome: ${nome}%0ANascimento: ${nascimento}%0ACPF: ${cpf}%0AWhatsApp: ${whatsapp}%0APlano: ${plano}`;
             window.open(`https://wa.me/+5521992003436?text=${mensagem}`, '_blank');
         }
     </script>
